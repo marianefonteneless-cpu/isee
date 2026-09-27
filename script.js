@@ -2,97 +2,73 @@
 // iSee - Filmes
 // ========================================
 
-
-// ========================================
-// LISTA DE FILMES
-// ========================================
-
 const filmes = [
 
     {
         titulo: "Interestelar",
         ano: 2014,
-        nota: 8.7
+        nota: 8.7,
+        imagem: "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg"
     },
-
 
     {
         titulo: "O Senhor dos Anéis",
         ano: 2001,
-        nota: 8.9
+        nota: 8.9,
+        imagem: "https://image.tmdb.org/t/p/w500/6oom5QYQ2yQTMJIbnvbkbl8c6qK.jpg"
     },
-
 
     {
         titulo: "Homem-Aranha",
         ano: 2002,
-        nota: 7.4
+        nota: 7.4,
+        imagem: "https://image.tmdb.org/t/p/w500/gh4cZbhZxyTbgxQPxD0dOud0zH.jpg"
     }
 
 ];
 
 
-
 // ========================================
-// ENCONTRAR O LOCAL DOS CARDS
+// Encontrar o local dos cards
 // ========================================
 
 const container = document.getElementById("movies-container");
 
 
-
 // ========================================
-// CRIAR OS CARDS
+// Criar os cards
 // ========================================
 
 filmes.forEach(function(filme) {
 
-
-    // Criar uma nova div
-
     const card = document.createElement("div");
 
-
-    // Adicionar a classe movie-card
-
     card.classList.add("movie-card");
-
-
-    // Conteúdo do card
 
     card.innerHTML = `
 
         <div class="movie-cover">
 
-            🎬
+            <img
+                src="${filme.imagem}"
+                alt="Pôster de ${filme.titulo}"
+            >
 
         </div>
 
-
         <h3>
-
             ${filme.titulo}
-
         </h3>
 
-
         <p>
-
             ${filme.ano}
-
         </p>
 
-
         <span>
-
             ⭐ ${filme.nota}
-
         </span>
 
     `;
-
-
-    // Colocar o card dentro da página
 
     container.appendChild(card);
 
